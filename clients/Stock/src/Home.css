@@ -1,0 +1,13 @@
+.home {
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+.home h1 {
+    color: red; /* Set text color to red */
+   margin-top: -90vh;
+    
+}
