@@ -2,10 +2,10 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
-    align-items: center; 
+    justify-content: flex-start;
+    align-items: flex-start;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     background-size: cover;
 }
 
@@ -15,24 +15,28 @@
 }
 
 .buttons {
-    margin-bottom:  50%;
-    margin-left: 85% 
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.go-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
 }
 
 .button {
     color: white;
-    background-color: #007bff; 
+    background-color: #007bff;
     border: none;
     padding: 10px 20px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     text-decoration: none;
-    transition: background-color 0.3s ease; 
-}
-
-.button:last-child {
-    margin-bottom: 0; 
+    transition: background-color 0.3s ease;
+    display: block;
 }
 
 .button:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
 }
