@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const {User} = require("./schema")
 const mongoose = require('mongoose')
-require('dotenv').config()
+
 
 app.get('/',(req,res)=>{
     res.send('server deployed')
@@ -13,7 +13,7 @@ let connectionStatus = 'disconnected';
 
 const startDatabase = async () => {
     try {
-        await mongoose.connect(process.env.URI);
+        await mongoose.connect('mongodb+srv://Admin:Admin@cluster0.lm8nxzv.mongodb.net/stock-market?retryWrites=true&w=majority&appName=Cluster0');
         connectionStatus = "The database has been connected!!";
     } catch (err) {
         console.error("Failed to connect to database");
