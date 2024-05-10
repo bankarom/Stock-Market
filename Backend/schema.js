@@ -1,28 +1,13 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true
-  },
-  dob: {
-    type: Date,
-    required: true
-  },
-  occupation: {
-    type: String,
-    required: true
-  },
-  phone: {
-    type: String,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
-  }
+  username: String,
+  dob: String,
+  occupation: String,
+  phone: String,
+  password: String
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('stockuser-collection', userSchema);     
 
-module.exports = User;
+module.exports = {User};
