@@ -4,8 +4,8 @@ const {User} = require("./schema")
 const mongoose = require('mongoose')
 
 
-app.get('/',(req,res)=>{
-    res.send('server deployed')
+app.get('/healthcheck',(req,res)=>{
+    res.send('pong')
 })
 
 app.use(express.json())
