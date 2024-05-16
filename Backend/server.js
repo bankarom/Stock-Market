@@ -8,6 +8,12 @@ app.get('/healthcheck',(req,res)=>{
     res.send('pong')
 })
 
+
+app.post('/post', (req, res) => {
+    const data = req.body; 
+    res.json({ message: 'Data received successfully', data });
+  });
+
 app.use(express.json())
 let connectionStatus = 'disconnected';
 
