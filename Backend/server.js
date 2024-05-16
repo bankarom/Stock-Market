@@ -4,7 +4,7 @@ const {User} = require("./schema")
 const mongoose = require('mongoose')
 
 
-app.get('/ping',(req,res)=>{
+app.get('/healthcheck',(req,res)=>{
     res.send('pong')
 })
 
