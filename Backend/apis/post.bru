@@ -1,0 +1,21 @@
+meta {
+  name: post
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "Om kalvium",
+    "dob": "1995-04-05",
+    "occupation": "Accountant",
+    "phone": "777-888-9999",
+    "password": "passwordxyz"
+  }
+}

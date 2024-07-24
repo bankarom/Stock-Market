@@ -1,0 +1,21 @@
+meta {
+  name: put
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:3000/users/663c6e4ac67791c74f530946
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "Emly Devi",
+    "dob": "1995-04-05",
+    "occupation": "Accountant",
+    "phone": "777-888-9999",
+    "password": "passwordxyz"
+  }
+}

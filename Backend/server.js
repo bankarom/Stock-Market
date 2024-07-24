@@ -42,7 +42,7 @@ app.post('/users', async (req, res) => {
     }
 });
 
-app.put('/users/id', async (req, res) => {
+app.put('/users/:id', async (req, res) => {
     try {
         const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!user) {
