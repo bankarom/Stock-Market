@@ -42,6 +42,19 @@ app.post('/users', async (req, res) => {
     }
 });
 
+app.put('/users/id', async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!user) {
+            return res.status(404).send('User not found');
+        }
+        res.json({ message: 'entity updated', user });
+    } catch (err) {
+        res.status(500).send(err);
+        console.log(err);
+    }
+});
+
 
 app.get('/', (req, res) => {
     res.send(connectionStatus);
