@@ -48,7 +48,7 @@ app.put('/users/id', async (req, res) => {
         if (!user) {
             return res.status(404).send('User not found');
         }
-        res.json({ message: 'updated entity', user });
+        res.json({ message: 'entity updated', user });
     } catch (err) {
         res.status(500).send(err);
         console.log(err);
