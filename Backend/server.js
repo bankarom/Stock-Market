@@ -7,19 +7,7 @@ app.get('/healthcheck', (req, res) => {
     res.send('pong');
 });
 
-
 app.use(express.json());
-app.get('/healthcheck',(req,res)=>{
-    res.send('pong')
-})
-
-
-app.post('/post', (req, res) => {
-    const data = req.body; 
-    res.json({ message: 'Data received successfully', data });
-  });
-
-app.use(express.json())
 let connectionStatus = 'disconnected';
 
 const startDatabase = async () => {
@@ -37,6 +25,17 @@ app.get('/users', async (req, res) => {
     try {
         const users = await User.find();
         res.json(users);
+    } catch (err) {
+        res.status(500).send(err);
+        console.log(err);
+    }
+});
+
+app.post('/users', async (req, res) => {
+    try {
+        const user = new User(req.body);
+        await user.save();
+        res.status(201).json({ message: 'data added', user });
     } catch (err) {
         res.status(500).send(err);
         console.log(err);
